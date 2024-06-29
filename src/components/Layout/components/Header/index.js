@@ -5,7 +5,6 @@ import 'tippy.js/dist/tippy.css';
 import {
     faCircleQuestion,
     faCircleXmark,
-    faCloudArrowUp,
     faCoins,
     faEarthAsia,
     faEllipsisVertical,
@@ -25,6 +24,8 @@ import images from '~/assets/images';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItems from '~/components/AccountItem';
 import Menu from '~/components/Popper/Menu';
+import { UploadIcon } from '~/components/Icons';
+import Image from '~/components/Image';
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
     {
@@ -141,7 +142,7 @@ function Header() {
                         <>
                             <Tippy delay={[0, 200]} content="upload video" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudArrowUp} />
+                                    <UploadIcon />
                                 </button>
                             </Tippy>
                         </>
@@ -153,10 +154,11 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avartar')}
                                 alt="Nguyen Van A"
-                                src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/b5b49d0f0b715545caef71990b177b47.jpeg?lk3s=a5d48078&nonce=63788&refresh_token=1509b8d434c40932071752cacb860605&x-expires=1719712800&x-signature=zOL1kylv2G4nXjbdAWvnfHTcAkU%3D&shp=a5d48078&shcp=81f88b70"
+                                src="https://p16-sign-sg..com/aweme/100x100/tos-alisg-avt-0068/b5b49d0f0b715545caef71990b177b47.jpeg?lk3s=a5d48078&nonce=63788&refresh_token=1509b8d434c40932071752cacb860605&x-expires=1719712800&x-signature=zOL1kylv2G4nXjbdAWvnfHTcAkU%3D&shp=a5d48078&shcp=81f88b70"
+                                // fallBack="https://files.fullstack.edu.vn/f8-prod/user_photos/329384/647f3b3a719a6.jpg"
                             />
                         ) : (
                             <button className={cx('more-btn')}>
