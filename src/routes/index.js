@@ -20,7 +20,7 @@ const publicRoutes = [
         exact: true,
     },
     {
-        path: '/profile',
+        path: '/:nickname',
         component: Profile,
         exact: true,
     },
