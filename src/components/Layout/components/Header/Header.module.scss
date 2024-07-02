@@ -8,11 +8,16 @@
     --search-top-spacer: 9px;
     --search-button-width: 52px;
 
-    height: var(--default-layout-header-height, 60px);
-    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
     display: flex;
     justify-content: center;
+    height: var(--default-layout-header-height, 60px);
+    width: 100%;
     box-shadow: 0 0px 1px rgb(0 0 0/24%);
+    background-color: var(--white);
 }
 .inner {
     height: 100%;
