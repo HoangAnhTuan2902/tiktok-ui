@@ -28,10 +28,9 @@ function Search() {
 
         const fetchApi = async () => {
             setLoading(true);
- 
+
             const result = await searchServices.search(debounced);
-            setSearchResult
-            (result);
+            setSearchResult(result);
 
             setLoading(false);
         };
@@ -48,6 +47,14 @@ function Search() {
     const handlehideResult = () => {
         setShowResult(false);
     };
+    const handleChange = (e) => {
+        const searchValue = e.target.value;
+
+        if (!searchValue.startsWith(' ')) {
+            setSearchValue(e.target.value);
+        }
+    };
+
     return (
         <HeadLessTippy
             visible={showResult && searchResult.length > 0}
@@ -71,7 +78,7 @@ function Search() {
                     type="text"
                     placeholder="Search accounts and videos"
                     spellCheck={false}
-                    onChange={(e) => setSearchValue(e.target.value)}
+                    onChange={handleChange}
                     onFocus={() => setShowResult(true)}
                 />
                 {!!searchValue && !loading && (
@@ -86,7 +93,7 @@ function Search() {
                 )}
                 {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
 
-                <button className={cx('search-btn')}>
+                <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
                     {/* <FontAwesomeIcon icon={faMagnifyingGlass} /> */}
                     <SearchIcon />
                 </button>

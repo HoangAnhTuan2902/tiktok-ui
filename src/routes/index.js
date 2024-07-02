@@ -6,32 +6,33 @@ import Following from '~/pages/Following';
 import Profile from '~/pages/Profile';
 import Upload from '~/pages/Upload';
 import Search from '~/pages/Search';
+import routesConfig from '~/config/routes';
 
 // Public routes
 const publicRoutes = [
     {
-        path: '/',
+        path: routesConfig.home,
         component: Home,
         exact: true,
     },
     {
-        path: '/following',
+        path: routesConfig.following,
         component: Following,
         exact: true,
     },
     {
-        path: '/:nickname',
+        path: routesConfig.nickname,
         component: Profile,
         exact: true,
     },
     {
-        path: '/upload',
+        path: routesConfig.upload,
         component: Upload,
         exact: true,
         layout: HeaderOnly,
     },
     {
-        path: '/search',
+        path: routesConfig.search,
         component: Search,
         exact: true,
         layout: null,
